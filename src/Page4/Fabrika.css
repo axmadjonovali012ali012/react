@@ -1,0 +1,22 @@
+.container1{
+    width: 78%;
+    margin:  auto;
+    background-color: #F1F0FA;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+.container1 h1{
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.display{
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+}
+.display p{
+    font-size: 20px;
+    font-weight: 400;
+}

@@ -1,0 +1,144 @@
+.cart {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cart-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cart-content img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cart-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cart-text h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cart-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.cart-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-inputs input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cart-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    max-width: 200px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .cart-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-text h1 {
+        font-size: 24px;
+    }
+
+    .cart-button {
+        width: 100%;
+    }
+}
+
+
+.karta-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    text-align: center;
+}
+
+.karta-left {
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.karta-right {
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.karta-iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+}
+
+@media (max-width: 1200px) {
+    .karta-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .karta-left,
+    .karta-right {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .karta-left h1 {
+        font-size: 24px;
+    }
+
+    .karta-left p {
+        font-size: 16px;
+    }
+
+    .karta-iframe {
+        height: 250px;
+    }
+
+    .karta-button {
+        width: 100% !important;
+    }
+}

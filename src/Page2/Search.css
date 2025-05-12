@@ -1,0 +1,47 @@
+.house-search-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.house-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.house-card {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+    min-width: 280px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1200px) {
+    .house-card {
+        flex: 1 1 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .house-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.house-card-body {
+    padding: 20px;
+}

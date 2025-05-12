@@ -1,0 +1,103 @@
+.question-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-top: 150px;
+}
+
+.question-box {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    width: 100%;
+    overflow: visible;
+}
+
+.question-mark {
+    position: absolute;
+    top: -75px;
+    right: -0px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-row input {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.question-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.confirm {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.confirm input {
+    margin-top: 5px;
+}
+
+.confirm a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.submit-button {
+    background-color: red;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: darkred;
+}
+
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row input {
+        width: 100%;
+    }
+}
