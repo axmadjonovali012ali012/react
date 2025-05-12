@@ -280,7 +280,7 @@
 
 
 
-.factory-stats {
+.factory-stats1 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -288,13 +288,13 @@
     text-align: center;
 }
 
-.section-title {
+.section-title1 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
-.card-container {
+.card-container1 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -322,7 +322,7 @@
 
 .number {
     color: #F6151C;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 14px;
 }

@@ -10,7 +10,8 @@ import {
   ContactsOutlined,
   CalculatorOutlined,
   ShoppingCartOutlined,
-  UserOutlined
+  UserOutlined,
+  MessageOutlined
 } from '@ant-design/icons';
 import './MyNavbar.css';
 import { NavLink } from "react-router-dom";
@@ -29,148 +30,112 @@ const MyNavbar = () => {
 
     handleResize();
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <>
+      {/* Yuqori info qismi */}
       <Container fluid>
-        <Row className="align-items-center justify-content-between gap-5" style={{ backgroundColor: '#f5f4fa', fontSize: '14px', padding: '6px 0' }}>
+        <Row className="align-items-center justify-content-between gap-2 px-3" style={{ backgroundColor: '#f5f4fa', fontSize: '14px', padding: '6px 0' }}>
           <Col xs="auto" className="d-flex align-items-center gap-2">
             <FaMapMarkerAlt color="red" />
             <span>Иркутск</span>
           </Col>
 
-          <Col className="d-none d-md-block" style={{ marginLeft: '50px' }}>
+          <Col className="d-none d-md-block">
             <a href="#" style={{ textDecoration: 'underline', color: '#000' }}>
               Оставить претензию
             </a>
           </Col>
 
-          <Col xs="auto" className="d-flex align-items-center d-none d-md-block">
+          <Col xs="auto" className="d-none d-md-flex align-items-center">
             <a href="#" style={{ color: 'red', fontWeight: 500 }}>Заказать звонок</a>
           </Col>
 
-          <Col xs="auto" className="d-flex align-items-center gap-3">
+          <Col xs="auto" className="d-flex align-items-center gap-2">
             <FaPhoneAlt />
             <span>+7 395 252–59–99</span>
           </Col>
         </Row>
       </Container>
 
+      {/* NAVBAR QISMI */}
       {isMobile ? (
         <>
-          <div className="text-center mt-3">
+          <div className="text-center mt-3 px-3">
             <button
-              className="bg-white text-start w-100 d-flex justify-content-between align-items-center"
-              style={{ color: 'black' }}
+              className="bg-white border-0 w-100 d-flex justify-content-between align-items-center"
               onClick={handleShow}
+              style={{ padding: '10px' }}
             >
-              <img src={foto} alt="" />
-              <span
-                style={{
-                  backgroundColor: 'black',
-                  color: 'white',
-                  width: '60px',
-                  padding: '10px',
-                  textAlign: 'center',
-                  marginTop: '5px',
-                  borderRadius: '5px'
-                }}
-              >
+              <img src={foto} alt="logo" style={{ height: '40px' }} />
+              <span style={{
+                backgroundColor: 'black',
+                color: 'white',
+                width: '50px',
+                padding: '8px',
+                textAlign: 'center',
+                borderRadius: '5px',
+                fontSize: '20px'
+              }}>
                 ☰
               </span>
             </button>
           </div>
 
-
+          {/* Ant Design Modal menyu */}
           <Modal
-            visible={show}
+            open={show}
             onCancel={handleClose}
             footer={null}
             centered
-            width={500}
-            bodyStyle={{
-              padding: '24px',
-            }}
+            width="90%"
+            bodyStyle={{ padding: '24px' }}
           >
-            <div style={{ gap: '30px' }}>
-              <div style={{ flex: 1 }}>
-                <Nav className="flex-column gap-2">
-                  <NavLink to="/katalog" className="modal-link">
-                    <AppstoreOutlined style={{ marginRight: 8 }} />
-                    Каталог
-                  </NavLink>
-                  <NavLink to="/proekti" className="modal-link">
-                    <ProjectOutlined style={{ marginRight: 8 }} />
-                    Проекты
-                  </NavLink>
-                  <NavLink to="/aksiyalar" className="modal-link">
-                    <TagsOutlined style={{ marginRight: 8 }} />
-                    Акции
-                  </NavLink>
-                  <NavLink to="/izohlar" className="modal-link">
-                    <MessageOutlined style={{ marginRight: 8 }} />
-                    Контакты
-                  </NavLink>
-                  <hr />
-                  <NavLink to="/kalkulyator" className="modal-link">
-                    <CalculatorOutlined style={{ marginRight: 8 }} />
-                    Калькулятор
-                  </NavLink>
-                  <NavLink to="/korzina" className="modal-link">
-                    <ShoppingCartOutlined style={{ marginRight: 8 }} />
-                    Корзина
-                  </NavLink>
-                  <NavLink to="/profil" className="modal-link">
-                    <UserOutlined style={{ marginRight: 8 }} />
-                    Профиль
-                  </NavLink>
-                </Nav>
-              </div>
-            </div>
+            <Nav className="flex-column gap-3">
+              <NavLink to="/katalog" className="modal-link"><AppstoreOutlined /> Каталог</NavLink>
+              <NavLink to="/proekti" className="modal-link"><ProjectOutlined /> Проекты</NavLink>
+              <NavLink to="/aksiyalar" className="modal-link"><TagsOutlined /> Акции</NavLink>
+              <NavLink to="/izohlar" className="modal-link"><MessageOutlined /> Контакты</NavLink>
+              <hr />
+              <NavLink to="/kalkulyator" className="modal-link"><CalculatorOutlined /> Калькулятор</NavLink>
+              <NavLink to="/korzina" className="modal-link"><ShoppingCartOutlined /> Корзина</NavLink>
+              <NavLink to="/profil" className="modal-link"><UserOutlined /> Профиль</NavLink>
+            </Nav>
           </Modal>
-
         </>
       ) : (
-        <Navbar bg="white" className='d-flex align-items-center' expand="lg">
+        <Navbar bg="white" expand="lg" className="shadow-sm">
           <Container>
-            <Navbar.Brand href="#"><img src={foto} alt="logo" className="logo-img" style={{ height: '40px' }} /></Navbar.Brand>
+            <Navbar.Brand href="#"><img src={foto} alt="logo" style={{ height: '40px' }} /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <div className="d-flex w-100 justify-content-between">
-                <Nav className="m-auto gap-5">
-                  <NavLink to="/katalog" className="nav-link-hover-red d-flex p-2 align-items-center">
-                    <AppstoreOutlined style={{ marginRight: 6 }} />
-                    Каталог
+                <Nav className="gap-4">
+                  <NavLink to="/katalog" className="nav-link nav-link-hover-red d-flex align-items-center">
+                    <AppstoreOutlined className="me-1" /> Каталог
                   </NavLink>
-                  <NavLink to="/proekti" className="nav-link-hover-red d-flex p-2 align-items-center">
-                    <ProjectOutlined style={{ marginRight: 6 }} />
-                    Проекты
+                  <NavLink to="/proekti" className="nav-link nav-link-hover-red d-flex align-items-center">
+                    <ProjectOutlined className="me-1" /> Проекты
                   </NavLink>
-                  <NavLink to="/aksiyalar" className="nav-link-hover-red d-flex p-2 align-items-center">
-                    <TagsOutlined style={{ marginRight: 6 }} />
-                    Акции
+                  <NavLink to="/aksiyalar" className="nav-link nav-link-hover-red d-flex align-items-center">
+                    <TagsOutlined className="me-1" /> Акции
                   </NavLink>
-                  <NavLink to="/izohlar" className="nav-link-hover-red d-flex p-2 align-items-center">
-                    <ContactsOutlined style={{ marginRight: 6 }} />
-                    Контакты
+                  <NavLink to="/izohlar" className="nav-link nav-link-hover-red d-flex align-items-center">
+                    <ContactsOutlined className="me-1" /> Контакты
                   </NavLink>
                 </Nav>
 
-                <Nav className="ms-auto gap-5" style={{ marginRight: '20px' }}>
-                  <NavLink to="/kalkulyator" className="nav-link-hover-blue d-flex align-items-center">
-                    <CalculatorOutlined style={{ marginRight: 6 }} />
-                    Калькулятор
+                <Nav className="gap-4">
+                  <NavLink to="/kalkulyator" className="nav-link nav-link-hover-blue d-flex align-items-center">
+                    <CalculatorOutlined className="me-1" /> Калькулятор
                   </NavLink>
-                  <NavLink to="/korzina" className="nav-link-hover-blue d-flex align-items-center">
-                    <ShoppingCartOutlined style={{ marginRight: 6 }} />
-                    Корзина
+                  <NavLink to="/korzina" className="nav-link nav-link-hover-blue d-flex align-items-center">
+                    <ShoppingCartOutlined className="me-1" /> Корзина
                   </NavLink>
-                  <NavLink to="/profil" className="nav-link-hover-blue d-flex align-items-center">
-                    <UserOutlined style={{ marginRight: 6 }} />
-                    Профиль
+                  <NavLink to="/profil" className="nav-link nav-link-hover-blue d-flex align-items-center">
+                    <UserOutlined className="me-1" /> Профиль
                   </NavLink>
                 </Nav>
               </div>

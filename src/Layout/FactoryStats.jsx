@@ -31,13 +31,13 @@ const FactoryStats = () => {
     ];
 
     return (
-        <div className="factory-stats">
-            <h2 className="section-title">ФАБРИКА БЕТОНОВ СЕГОДНЯ</h2>
-            <div className="card-container">
+        <div className="factory-stats1">
+            <h2 className="section-title1">ФАБРИКА БЕТОНОВ СЕГОДНЯ</h2>
+            <div className="card-container1">
                 {stats.map((item, idx) => (
                     <div className={`stat-card ${item.className}`} key={idx}>
                         <div className="icon">{item.icon}</div>
-                        <div className="number">{item.number}</div>
+                        <div className="number fs-2">{item.number}</div>
                         <div className="title">{item.title}</div>
                         <div className="desc">{item.desc}</div>
                     </div>

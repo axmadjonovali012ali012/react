@@ -23,4 +23,4 @@ function Fabrika() {
     )
 }
 
-export default Fabrika
+export default Fabrika;
