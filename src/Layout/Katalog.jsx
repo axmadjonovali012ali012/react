@@ -18,6 +18,7 @@ import ComboSet from './ComboSet';
 import Footer from './Footer';
 import Karta from '../Page2/Karta';
 import SubscriptionBox from '../Page2/SubscriptionBox';
+import './katalog.css'
 
 
 const Main = () => {
@@ -28,7 +29,7 @@ const Main = () => {
 
     const screens = useBreakpoint();
 
-    const isMobile = !screens.md; 
+    const isMobile = !screens.md;
     const flexWidth = isMobile ? '100%' : '25%';
 
 
@@ -53,7 +54,7 @@ const Main = () => {
                     </p>
                 </div>
             </div>
-            <div className='container '>
+            <div className='container'>
                 <div className="cardd">
                     <div className="card1">
                         <img src={foto3} alt="" />
@@ -72,29 +73,33 @@ const Main = () => {
                         <h3>Заборы и бордюры</h3>
                     </div>
                 </div>
+
                 <div className="cardd">
-                    <div className="card1">
-                        <img src={foto7} alt="" />
-                        <h3>Сухие смеси</h3>
-                    </div>
-                    <div className="card1"  >
-                        <img src={foto8} alt="" />
-                        <h3 style={{ marginTop: '50px' }} >Строительные блоки</h3>
-                    </div>
-                    <div className="card1">
-                        <img src={foto9} alt="" />
-                        <h3>Бетон и жидкие смеси</h3>
-                    </div>
-                    <div className="card1">
-                        <img src={foto10} alt="" />
-                        <h3>Инструменты и сопутствующие </h3>
+                    <div className="cardd">
+                        <div className="card1">
+                            <img src={foto7} alt="" />
+                            <h3>Сухие смеси</h3>
+                        </div>
+                        <div className="card1"  >
+                            <img src={foto8} alt="" />
+                            <h3 style={{ marginTop: '50px' }} >Строительные блоки</h3>
+                        </div>
+                        <div className="card1">
+                            <img src={foto9} alt="" />
+                            <h3>Бетон и жидкие смеси</h3>
+                        </div>
+                        <div className="card1">
+                            <img src={foto10} alt="" />
+                            <h3>Инструменты и сопутствующие </h3>
+                        </div>
                     </div>
                 </div>
-                <Flex justify="flex-start" gap="small" wrap style={{ width: flexWidth }}>
+
+                <Flex justify="center" gap="small" wrap style={{ width: '100%' }}>
                     <Button
                         type="primary"
                         danger
-                        style={{ margin: '10px', padding: '3px', width: '100%' }}
+                        style={{ margin: '10px', padding: '3px', width: '90%', maxWidth: '300px' }}
                         onClick={handleRedirect}
                     >
                         Перейти в каталог

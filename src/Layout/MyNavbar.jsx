@@ -35,7 +35,6 @@ const MyNavbar = () => {
 
   return (
     <>
-      {/* Yuqori info qismi */}
       <Container fluid>
         <Row className="align-items-center justify-content-between gap-2 px-3" style={{ backgroundColor: '#f5f4fa', fontSize: '14px', padding: '6px 0' }}>
           <Col xs="auto" className="d-flex align-items-center gap-2">
@@ -60,7 +59,6 @@ const MyNavbar = () => {
         </Row>
       </Container>
 
-      {/* NAVBAR QISMI */}
       {isMobile ? (
         <>
           <div className="text-center mt-3 px-3">
@@ -84,7 +82,6 @@ const MyNavbar = () => {
             </button>
           </div>
 
-          {/* Ant Design Modal menyu */}
           <Modal
             open={show}
             onCancel={handleClose}
@@ -94,54 +91,61 @@ const MyNavbar = () => {
             bodyStyle={{ padding: '24px' }}
           >
             <Nav className="flex-column gap-3">
-              <NavLink to="/katalog" className="modal-link"><AppstoreOutlined /> Каталог</NavLink>
-              <NavLink to="/proekti" className="modal-link"><ProjectOutlined /> Проекты</NavLink>
-              <NavLink to="/aksiyalar" className="modal-link"><TagsOutlined /> Акции</NavLink>
-              <NavLink to="/izohlar" className="modal-link"><MessageOutlined /> Контакты</NavLink>
+              <NavLink to="/katalog" onClick={handleClose} className="modal-link"><AppstoreOutlined /> Каталог</NavLink>
+              <NavLink to="/proekti" onClick={handleClose} className="modal-link"><ProjectOutlined /> Проекты</NavLink>
+              <NavLink to="/aksiyalar" onClick={handleClose} className="modal-link"><TagsOutlined /> Акции</NavLink>
+              <NavLink to="/izohlar" onClick={handleClose} className="modal-link"><MessageOutlined /> Контакты</NavLink>
               <hr />
-              <NavLink to="/kalkulyator" className="modal-link"><CalculatorOutlined /> Калькулятор</NavLink>
-              <NavLink to="/korzina" className="modal-link"><ShoppingCartOutlined /> Корзина</NavLink>
-              <NavLink to="/profil" className="modal-link"><UserOutlined /> Профиль</NavLink>
+              <NavLink to="/kalkulyator" onClick={handleClose} className="modal-link"><CalculatorOutlined /> Калькулятор</NavLink>
+              <NavLink to="/korzina" onClick={handleClose} className="modal-link"><ShoppingCartOutlined /> Корзина</NavLink>
+              <NavLink to="/profil" onClick={handleClose} className="modal-link"><UserOutlined /> Профиль</NavLink>
             </Nav>
           </Modal>
+
         </>
       ) : (
-        <Navbar bg="white" expand="lg" className="shadow-sm">
-          <Container>
-            <Navbar.Brand href="#"><img src={foto} alt="logo" style={{ height: '40px' }} /></Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <div className="d-flex w-100 justify-content-between">
-                <Nav className="gap-4">
-                  <NavLink to="/katalog" className="nav-link nav-link-hover-red d-flex align-items-center">
-                    <AppstoreOutlined className="me-1" /> Каталог
-                  </NavLink>
-                  <NavLink to="/proekti" className="nav-link nav-link-hover-red d-flex align-items-center">
-                    <ProjectOutlined className="me-1" /> Проекты
-                  </NavLink>
-                  <NavLink to="/aksiyalar" className="nav-link nav-link-hover-red d-flex align-items-center">
-                    <TagsOutlined className="me-1" /> Акции
-                  </NavLink>
-                  <NavLink to="/izohlar" className="nav-link nav-link-hover-red d-flex align-items-center">
-                    <ContactsOutlined className="me-1" /> Контакты
-                  </NavLink>
-                </Nav>
 
-                <Nav className="gap-4">
-                  <NavLink to="/kalkulyator" className="nav-link nav-link-hover-blue d-flex align-items-center">
-                    <CalculatorOutlined className="me-1" /> Калькулятор
-                  </NavLink>
-                  <NavLink to="/korzina" className="nav-link nav-link-hover-blue d-flex align-items-center">
-                    <ShoppingCartOutlined className="me-1" /> Корзина
-                  </NavLink>
-                  <NavLink to="/profil" className="nav-link nav-link-hover-blue d-flex align-items-center">
-                    <UserOutlined className="me-1" /> Профиль
-                  </NavLink>
-                </Nav>
-              </div>
-            </Navbar.Collapse>
+        <Navbar bg="white" expand="lg" className="shadow-sm">
+          <Container fluid style={{padding: '0px 130px'}}>
+            <div className="d-flex align-items-center justify-content-between w-100">
+              <Navbar.Brand href="#">
+                <img src={foto} alt="logo" style={{ height: '40px' }} />
+              </Navbar.Brand>
+
+              <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-1">
+                <div className="d-flex justify-content-between align-items-center w-100">
+
+                  <Nav className="gap-4">
+                    <NavLink to="/katalog" className="nav-item nav-link-hover-red">
+                      <AppstoreOutlined /> Каталог
+                    </NavLink>
+                    <NavLink to="/proekti" className="nav-item nav-link-hover-red">
+                      <ProjectOutlined /> Проекты
+                    </NavLink>
+                    <NavLink to="/aksiyalar" className="nav-item nav-link-hover-red">
+                      <TagsOutlined /> Акции
+                    </NavLink>
+                    <NavLink to="/izohlar" className="nav-item nav-link-hover-red">
+                      <ContactsOutlined /> Контакты
+                    </NavLink>
+                  </Nav>
+                  <Nav className="gap-4">
+                    <NavLink to="/kalkulyator" className="nav-item nav-link-hover-blue">
+                      <CalculatorOutlined /> Калькулятор
+                    </NavLink>
+                    <NavLink to="/korzina" className="nav-item nav-link-hover-blue">
+                      <ShoppingCartOutlined /> Корзина
+                    </NavLink>
+                    <NavLink to="/profil" className="nav-item nav-link-hover-blue">
+                      <UserOutlined /> Профиль
+                    </NavLink>
+                  </Nav>
+                </div>
+              </Navbar.Collapse>
+            </div>
           </Container>
         </Navbar>
+
       )}
     </>
   );

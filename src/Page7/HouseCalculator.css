@@ -63,3 +63,19 @@ button:hover {
     font-weight: bold;
     text-align: center;
 }
+
+.calculator-container {
+  background-color: #ffffff; 
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+@media (min-width: 1200px) {
+  .calculator-container {
+    padding-left: 100px; 
+    padding-right: 100px; 
+    background-color: transparent; 
+  }
+}

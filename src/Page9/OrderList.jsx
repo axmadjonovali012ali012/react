@@ -3,7 +3,7 @@ import "./App.css";
 
 const OrderList = ({ onDeliveryClick }) => {
     return (
-        <div>
+        <div className="order-list-container">
             <h3>Заказы</h3>
             <table className="order-table">
                 <thead>
@@ -17,6 +17,7 @@ const OrderList = ({ onDeliveryClick }) => {
                     </tr>
                 </thead>
                 <tbody>
+                    
                     <tr>
                         <td>123456</td>
                         <td>Ожидает</td>
@@ -34,5 +35,6 @@ const OrderList = ({ onDeliveryClick }) => {
         </div>
     );
 };
+
 
 export default OrderList;
